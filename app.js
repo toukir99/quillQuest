@@ -12,11 +12,12 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URI
+    secret: process.env.SESSION_SECRET || 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URI,
+    ttl: 14 * 24 * 60 * 60, // session will expire in 14 days
   }),
   //cookie: { maxAge: new Date ( Date.now() + (3600000) ) } 
   // Date.now() - 30 * 24 * 60 * 60 * 1000
