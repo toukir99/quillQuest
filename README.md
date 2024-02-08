@@ -32,6 +32,6 @@ MongoDB: A NoSQL database was chosen for its flexibility and efficiency in handl
 
 Authentication:
 Google authentication: Ensures a secure and streamlined user registration and login process.
-Version Control:
 
+Version Control:
 Git: Facilitates version control and collaborative development for efficient project management.
